@@ -1,21 +1,9 @@
-Pin apt packages
-################
-:tags: openstack, apt, pinning, cloud, ansible
-:category: \*nix
+=========================================
+APT Package pinning for OpenStack-Ansible
+=========================================
 
-Ansible role for pinning apt packages.
-
-Example Ansible play
-
-.. code-block:: yaml
-
-    - name: Pin packages on all "hosts"
-      hosts: hosts
-      user: root
-      roles:
-        - role: "apt_package_pinning"
-          apt_package_pinning_file_name: "test.pref"
-          apt_pinned_packages:
-            - { package: "test-package-version", version: "9.9.9-version" }
-            - { package: "test-package-origin", origin: "test-origin.org" }
-            - { package: "test-package-release.*", release: "TestRelease" }
+This role will set package pinning for APT packages. The role will create a
+preference file used to pin packages to a *release*, *origin*, or *version*.
+The pinning syntax is a simple data driven format which is a list of
+dictionaries. The items must contain a *package* entry and pinning type.
+Pinning types are *release*, *origin*, or *version*.
