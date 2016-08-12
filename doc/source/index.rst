@@ -2,25 +2,25 @@
 OpenStack apt cache pinning
 ===========================
 
-Table of Contents
-~~~~~~~~~~~~~~~~~
+This role will set package pinning for APT packages. The role will create a
+preference file used to pin packages to a *release*, *origin*, or *version*.
+The pinning syntax is a simple data driven format which is a list of
+dictionaries. The items must contain a *package* entry and pinning type.
+Pinning types are *release*, *origin*, or *version*.
 
-.. toctree::
-   :maxdepth: 2
-
-Default Variables
+Default variables
 ~~~~~~~~~~~~~~~~~
 
 .. literalinclude:: ../../defaults/main.yml
    :language: yaml
    :start-after: under the License.
 
-Required Variables
+Required variables
 ~~~~~~~~~~~~~~~~~~
 
 None
 
-Example Playbook
+Example playbook
 ~~~~~~~~~~~~~~~~
 
 .. literalinclude:: ../../examples/playbook.yml
