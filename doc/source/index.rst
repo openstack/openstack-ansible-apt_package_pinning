@@ -1,21 +1,27 @@
-APT Package pinning for openstack-ansible
-=========================================
+===========================
+OpenStack apt cache pinning
+===========================
 
-This role will set package pinning for APT packages. The role will create a
-preference file used to pin packages to a *release*, *origin*, or *version*.
-The pinning syntax is a simple data driven format which is a list of
-dictionaries. The items must contain a *package* entry and pinning type.
-Pinning types are *release*, *origin*, or *version*.
+Table of Contents
+~~~~~~~~~~~~~~~~~
 
+.. toctree::
+   :maxdepth: 2
 
-Basic Role Example
-^^^^^^^^^^^^^^^^^^
+Default Variables
+~~~~~~~~~~~~~~~~~
 
-.. code-block:: yaml
+.. literalinclude:: ../../defaults/main.yml
+   :language: yaml
+   :start-after: under the License.
 
-    - role: "{{ rolename }}"
-      apt_package_pinning_file_name: test.pref
-      apt_pinned_packages:
-        - { package: "test-package-version", version: "9.9.9-version" }
-        - { package: "test-package-origin", origin: "test-origin.org" }
-        - { package: "test-package-release.*", release: "TestRelease", priority: 101 }
+Required Variables
+~~~~~~~~~~~~~~~~~~
+
+None
+
+Example Playbook
+~~~~~~~~~~~~~~~~
+
+.. literalinclude:: ../../examples/playbook.yml
+   :language: yaml
