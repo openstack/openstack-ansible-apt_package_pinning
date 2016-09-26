@@ -17,7 +17,7 @@
   hosts: localhost
   connection: local
   roles:
-    - role: "{{ rolename | basename }}"
+    - role: "apt_package_pinning"
       apt_package_pinning_file_name: test.pref
       apt_pinned_packages:
         - { package: "test-package-version", version: "9.9.9-version" }
