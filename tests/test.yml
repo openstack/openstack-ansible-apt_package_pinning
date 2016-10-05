@@ -18,11 +18,6 @@
   connection: local
   roles:
     - role: "apt_package_pinning"
-      apt_package_pinning_file_name: test.pref
-      apt_pinned_packages:
-        - { package: "test-package-version", version: "9.9.9-version" }
-        - { package: "test-package-origin", origin: "test-origin.org" }
-        - { package: "test-package-release.*", release: "TestRelease" }
   post_tasks:
     - name: Open preference file
       slurp:
