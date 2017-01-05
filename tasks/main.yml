@@ -20,3 +20,4 @@
   when: apt_pinned_packages is defined
   tags:
     - apt-package-pinning
+    - apt-install
