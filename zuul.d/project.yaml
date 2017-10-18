@@ -17,8 +17,10 @@
     name: openstack/openstack-ansible-apt_package_pinning
     check:
       jobs:
+        - openstack-ansible-linters
         - openstack-ansible-functional-ubuntu-xenial
     gate:
       queue: openstack-ansible
       jobs:
+        - openstack-ansible-linters
         - openstack-ansible-functional-ubuntu-xenial
