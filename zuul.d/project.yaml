@@ -16,6 +16,7 @@
     check:
       jobs:
         - openstack-ansible-linters
+        - openstack-ansible-functional-ubuntu-bionic
         - openstack-ansible-functional-ubuntu-xenial
     experimental:
       jobs:
@@ -23,4 +24,5 @@
     gate:
       jobs:
         - openstack-ansible-linters
+        - openstack-ansible-functional-ubuntu-bionic
         - openstack-ansible-functional-ubuntu-xenial
