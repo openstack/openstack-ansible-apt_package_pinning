@@ -14,5 +14,8 @@ APT Package pinning for OpenStack-Ansible
 Documentation for the project can be found at:
   https://docs.openstack.org/openstack-ansible-apt_package_pinning/latest/
 
+Release notes for the project can be found at:
+  https://docs.openstack.org/releasenotes/openstack-ansible-apt_package_pinning/
+
 The project home is at:
-  http://launchpad.net/openstack-ansible
+  https://launchpad.net/openstack-ansible
