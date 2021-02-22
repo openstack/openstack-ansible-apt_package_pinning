@@ -18,7 +18,7 @@
     src: apt_pinned_packages.perf.j2
     dest: "/etc/apt/preferences.d/{{ apt_package_pinning_file_name }}"
   when:
-    - ansible_pkg_mgr == 'apt'
+    - ansible_facts['pkg_mgr'] == 'apt'
     - apt_pinned_packages is defined
   tags:
     - apt-package-pinning

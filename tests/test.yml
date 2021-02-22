@@ -23,15 +23,15 @@
       slurp:
         src: "/etc/apt/preferences.d/test.pref"
       register: preference_file
-      when: ansible_pkg_mgr == 'apt'
+      when: ansible_facts['pkg_mgr'] == 'apt'
     - name: Read preference file
       set_fact:
         preference_contents: "{{ preference_file.content | b64decode }}"
-      when: ansible_pkg_mgr == 'apt'
+      when: ansible_facts['pkg_mgr'] == 'apt'
     - name: Check pin files contents
       assert:
         that:
           - "'Pin: version 9.9.9-version' in preference_contents"
           - "'Pin: origin test-origin.org' in preference_contents"
           - "'Pin: release o=TestRelease' in preference_contents"
-      when: ansible_pkg_mgr == 'apt'
+      when: ansible_facts['pkg_mgr'] == 'apt'
