@@ -14,11 +14,12 @@
 # limitations under the License.
 
 galaxy_info:
-  author: rcbops
+  author: rcb ops
   description: Pinning of apt packages
   company: Rackspace
   license: Apache2
   min_ansible_version: 1.6.6
+  role_name: apt_package_pinning
   platforms:
     - name: Debian
       versions:
