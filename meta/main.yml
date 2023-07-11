@@ -17,17 +17,19 @@ galaxy_info:
   author: rcbops
   description: Pinning of apt packages
   company: Rackspace
+  role_name: apt_cache_pinning
+  namespace: openstack
   license: Apache2
-  min_ansible_version: 1.6.6
+  min_ansible_version: "2.10"
   platforms:
     - name: Debian
       versions:
-        - stretch
+        - bullseye
     - name: Ubuntu
       versions:
-        - xenial
-        - bionic
-  categories:
+        - focal
+        - jammy
+  galaxy_tags:
     - cloud
     - apt
     - pinning
