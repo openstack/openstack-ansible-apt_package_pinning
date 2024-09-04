@@ -15,3 +15,4 @@
 
 apt_package_pinning_priority: 900
 apt_package_pinning_file_name: "openstack_pinned_packages.pref"
+apt_package_pinning_state: "present"

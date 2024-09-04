@@ -21,6 +21,14 @@
   when:
     - ansible_facts['pkg_mgr'] == 'apt'
     - apt_pinned_packages is defined
+    - apt_package_pinning_state == 'present'
   tags:
     - apt-package-pinning
     - apt-install
+
+- name: Remove apt pin preferences
+  file:
+    path: "/etc/apt/preferences.d/{{ apt_package_pinning_file_name }}"
+    state: absent
+  when:
+    - apt_package_pinning_state == 'absent'
