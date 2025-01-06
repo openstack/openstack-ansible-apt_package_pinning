@@ -1,0 +1,26 @@
+---
+driver:
+  name: docker
+
+platforms:
+  - name: "apt_package_pinning-${MOLECULE_SCENARIO_NAME}"
+    image: "${DOCKER_REGISTRY:-quay.io/gotmax23}/${DOCKER_IMAGE_TAG:-debian-systemd:bookworm}"
+    command: ${DOCKER_COMMAND:-""}
+    pre_build_image: true
+    privileged: true
+    systemd: true
+    groups:
+      - apt_pinning
+
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+  playbooks:
+    converge: ../../tests/test.yml
+  config_options:
+    defaults:
+      inject_facts_as_vars: false
+
+scenario:
+  name: default

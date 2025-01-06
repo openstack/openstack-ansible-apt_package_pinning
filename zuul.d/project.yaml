@@ -15,7 +15,7 @@
 - project:
     templates:
       - openstack-ansible-linters-jobs
-      - openstack-ansible-role-jobs
+      - openstack-ansible-molecule
       - check-requirements
       - publish-openstack-docs-pti
       - build-release-notes-jobs-python3

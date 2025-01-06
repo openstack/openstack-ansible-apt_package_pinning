@@ -14,10 +14,11 @@
 # limitations under the License.
 
 - name: Playbook for role testing
-  hosts: localhost
-  connection: local
+  hosts: apt_pinning
+  vars_files:
+    - apt_package_pinning-overrides.yml
   roles:
-    - role: "apt_package_pinning"
+    - role: "{{ playbook_dir | dirname | basename }}"
   post_tasks:
     - name: Open preference file
       slurp:
