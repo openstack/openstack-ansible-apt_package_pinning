@@ -14,7 +14,7 @@
 # limitations under the License.
 
 - name: Add apt pin preferences
-  template:
+  ansible.builtin.template:
     src: apt_pinned_packages.perf.j2
     dest: "/etc/apt/preferences.d/{{ apt_package_pinning_file_name }}"
     mode: "0644"
@@ -27,7 +27,7 @@
     - apt-install
 
 - name: Remove apt pin preferences
-  file:
+  ansible.builtin.file:
     path: "/etc/apt/preferences.d/{{ apt_package_pinning_file_name }}"
     state: absent
   when:

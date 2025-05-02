@@ -1,3 +1,4 @@
+---
 - name: Pin packages on all "hosts"
   hosts: hosts
   user: root
