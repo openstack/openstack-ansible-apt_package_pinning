@@ -18,7 +18,7 @@
   vars_files:
     - apt_package_pinning-overrides.yml
   roles:
-    - role: "{{ playbook_dir | dirname | basename }}"
+    - role: apt_package_pinning
   post_tasks:
     - name: Open preference file
       slurp:

@@ -17,7 +17,7 @@ galaxy_info:
   author: rcbops
   description: Pinning of apt packages
   company: Rackspace
-  role_name: apt_cache_pinning
+  role_name: apt_package_pinning
   namespace: openstack
   license: Apache2
   min_ansible_version: "2.10"
